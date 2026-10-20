@@ -1,0 +1,14 @@
+{
+  "name": "codex-startup-screen",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An unofficial cinematic Codex startup animation, adapted from dsh-startup-screen",
+  "license": "MIT",
+  "repository": "github:Yanyadua/codex-startup-screen",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "preview": "python3 -m http.server 8766 --bind 127.0.0.1",
+    "test": "node --test test/boot.test.mjs && python3 -m unittest discover -s test -p 'test_*.py'",
+    "check": "node --check lib/splash.js && node --check lib/config.js && node --check preview.js && node --check integration/electron/boot.js"
+  }
+}

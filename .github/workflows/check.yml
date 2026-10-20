@@ -1,0 +1,13 @@
+name: Check source
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JavaScript syntax
+        run: npm run check
+      - name: Boot lifecycle and ASAR corruption checks
+        run: npm test
